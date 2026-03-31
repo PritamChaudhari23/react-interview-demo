@@ -138,6 +138,13 @@ import UseReducerExample from "./HooksDemo/UseReducerExample";
 
 import { SomeProvider, Counter, Controls } from "./HooksDemo/UseContextExample";
 
+// Custom Hooks
+import UseCounterExample from "./HooksDemo/custom hooks examples/useCounter";
+import UseInputExample from "./HooksDemo/custom hooks examples/useInput";
+import UseToggleExample from "./HooksDemo/custom hooks examples/useToggle";
+import UseFetchExample from "./HooksDemo/custom hooks examples/useFetch";
+import UseLocalStorageExample from "./HooksDemo/custom hooks examples/useLocalStorage";
+
 function App() {
   const [a, setA] = useState(2);
   const [b, setB] = useState(3);
@@ -169,7 +176,33 @@ function App() {
         <Controls />
       </SomeProvider> */}
 
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
+      {/* CUSTOM HOOKS EXAMPLES */}
+      {/* ================================================== */}
+
+      <div style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
+        <h1 style={{ textAlign: "center", marginBottom: "40px" }}>Custom Hooks Examples</h1>
+
+        <div style={{ marginBottom: "40px" }}>
+          <UseCounterExample />
+        </div>
+
+        <div style={{ marginBottom: "40px" }}>
+          <UseInputExample />
+        </div>
+
+        <div style={{ marginBottom: "40px" }}>
+          <UseToggleExample />
+        </div>
+
+        <div style={{ marginBottom: "40px" }}>
+          <UseFetchExample />
+        </div>
+
+        <div style={{ marginBottom: "40px" }}>
+          <UseLocalStorageExample />
+        </div>
+      </div>
     </>
   );
 }
