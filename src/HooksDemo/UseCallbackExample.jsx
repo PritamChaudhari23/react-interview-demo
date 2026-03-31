@@ -1,21 +1,24 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState, useCallback } from "react";
+
+const Child = React.memo(({ onClick }) => {
+  console.log("Child re-rendered");
+  return <button onClick={onClick}>Click me</button>;
+});
 
 const UseCallbackExample = () => {
+  const [count, setCount] = useState(0);
 
-    const [count, setCount] = useState(0)
-    const [step, setStep] = useState(1)
-
-    const incrementCount = useCallback(() => {
-        setCount(prevCount => prevCount + step)
-    }, [step]);
+  const handleClick = useCallback(() => {
+    console.log("Button clicked");
+  }, []); // dependencies
 
   return (
     <div>
-        <p>Count: {count}</p>
-        <input type='number' value={step} onChange={e => setStep(e.target.value && parseInt(e.target.value))} />
-        <button onClick={incrementCount}>Increment</button>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <Child onClick={handleClick} />
     </div>
-  )
+  );
 }
 
 export default UseCallbackExample
