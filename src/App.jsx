@@ -132,10 +132,11 @@ import UseStateExample from "./HooksDemo/UseStateExample";
 import UseEffectExample from "./HooksDemo/UseEffectExample";
 import { UseRefExample, UseRefExample02 } from "./HooksDemo/UseRefExample";
 import UseMemoExample from "./HooksDemo/UseMemoExample";
-import UseReducerExample from "./HooksDemo/UseReducerExample";
-import UseContextExample from "./HooksDemo/UseContextExample";
-import UseCallbackExample from "./HooksDemo/UseCallbackExample";
 import ReactMemoExample from "./HooksDemo/ReactMemoExample";
+import UseCallbackExample from "./HooksDemo/UseCallbackExample";
+import UseReducerExample from "./HooksDemo/UseReducerExample";
+
+import { SomeProvider, Counter, Controls } from "./HooksDemo/UseContextExample";
 
 function App() {
   const [a, setA] = useState(2);
@@ -154,13 +155,21 @@ function App() {
         <UseMemoExample a={a} b={b} />
         <button onClick={() => setCount(c => c + 1)}>Re-render: {count}</button>
       </div> */}
-      {/* -------------------------------------------------- */}
 
       {/* <ReactMemoExample /> */}
-
+      {/* -------------------------------------------------- */}
+      
       {/* <UseCallbackExample /> */}
       {/* <UseReducerExample /> */}
-      {/* <UseContextExample /> */}
+
+      {/* -------------------------------------------------- */}
+      
+      {/* <SomeProvider>
+        <Counter />
+        <Controls />
+      </SomeProvider> */}
+
+      {/* -------------------------------------------------- */}
     </>
   );
 }
