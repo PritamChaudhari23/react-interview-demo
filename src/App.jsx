@@ -126,85 +126,109 @@
 // export default App;
 
 // ---------------------------------------------------------------------------------------------------------
-import { useState } from "react";
 
-import UseStateExample from "./HooksDemo/UseStateExample";
-import UseEffectExample from "./HooksDemo/UseEffectExample";
-import { UseRefExample, UseRefExample02 } from "./HooksDemo/UseRefExample";
-import UseMemoExample from "./HooksDemo/UseMemoExample";
-import ReactMemoExample from "./HooksDemo/ReactMemoExample";
-import UseCallbackExample from "./HooksDemo/UseCallbackExample";
-import UseReducerExample from "./HooksDemo/UseReducerExample";
-
-import { SomeProvider, Counter, Controls } from "./HooksDemo/UseContextExample";
-
-// Custom Hooks
-import UseCounterExample from "./HooksDemo/custom hooks examples/useCounter";
-import UseInputExample from "./HooksDemo/custom hooks examples/useInput";
-import UseToggleExample from "./HooksDemo/custom hooks examples/useToggle";
-import UseFetchExample from "./HooksDemo/custom hooks examples/useFetch";
-import UseLocalStorageExample from "./HooksDemo/custom hooks examples/useLocalStorage";
+import ErrorBoundary from './ErrorHandling/ErrorBoundry';
+import useErrorBoundary from './ErrorHandling/ErrorBoundaryFunctional';
+import FailingComponent from './ErrorHandling/FailingComponent';
 
 function App() {
-  const [a, setA] = useState(2);
-  const [b, setB] = useState(3);
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      {/* <UseStateExample /> */}
-      {/* <UseEffectExample /> */}
-      {/* <UseRefExample /> */}
-      {/* <UseRefExample02 /> */}
-
-      {/* -------------------------------------------------- */}
-      {/* <div>
-        <UseMemoExample a={a} b={b} />
-        <button onClick={() => setCount(c => c + 1)}>Re-render: {count}</button>
-      </div> */}
-
-      {/* <ReactMemoExample /> */}
-      {/* -------------------------------------------------- */}
-      
-      {/* <UseCallbackExample /> */}
-      {/* <UseReducerExample /> */}
-
-      {/* -------------------------------------------------- */}
-      
-      {/* <SomeProvider>
-        <Counter />
-        <Controls />
-      </SomeProvider> */}
-
-      {/* ================================================== */}
-      {/* CUSTOM HOOKS EXAMPLES */}
-      {/* ================================================== */}
-
-      <div style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
-        <h1 style={{ textAlign: "center", marginBottom: "40px" }}>Custom Hooks Examples</h1>
-
-        <div style={{ marginBottom: "40px" }}>
-          <UseCounterExample />
-        </div>
-
-        <div style={{ marginBottom: "40px" }}>
-          <UseInputExample />
-        </div>
-
-        <div style={{ marginBottom: "40px" }}>
-          <UseToggleExample />
-        </div>
-
-        <div style={{ marginBottom: "40px" }}>
-          <UseFetchExample />
-        </div>
-
-        <div style={{ marginBottom: "40px" }}>
-          <UseLocalStorageExample />
-        </div>
-      </div>
-    </>
+    <ErrorBoundary>
+      <FailingComponent />
+    </ErrorBoundary>
   );
+
+    // const { ErrorBoundary, handleError } = useErrorBoundary();
+    // return (
+    //     <ErrorBoundary>
+    //         <FailingComponent />
+    //     </ErrorBoundary>
+    // );
 }
 
 export default App;
+
+
+// ---------------------------------------------------------------------------------------------------------
+// import { useState } from "react";
+
+// import UseStateExample from "./HooksDemo/UseStateExample";
+// import UseEffectExample from "./HooksDemo/UseEffectExample";
+// import { UseRefExample, UseRefExample02 } from "./HooksDemo/UseRefExample";
+// import UseMemoExample from "./HooksDemo/UseMemoExample";
+// import ReactMemoExample from "./HooksDemo/ReactMemoExample";
+// import UseCallbackExample from "./HooksDemo/UseCallbackExample";
+// import UseReducerExample from "./HooksDemo/UseReducerExample";
+
+// import { SomeProvider, Counter, Controls } from "./HooksDemo/UseContextExample";
+
+// // Custom Hooks
+// import UseCounterExample from "./HooksDemo/custom hooks examples/useCounter";
+// import UseInputExample from "./HooksDemo/custom hooks examples/useInput";
+// import UseToggleExample from "./HooksDemo/custom hooks examples/useToggle";
+// import UseFetchExample from "./HooksDemo/custom hooks examples/useFetch";
+// import UseLocalStorageExample from "./HooksDemo/custom hooks examples/useLocalStorage";
+
+// function App() {
+//   const [a, setA] = useState(2);
+//   const [b, setB] = useState(3);
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <>
+//       {/* <UseStateExample /> */}
+//       {/* <UseEffectExample /> */}
+//       {/* <UseRefExample /> */}
+//       {/* <UseRefExample02 /> */}
+
+//       {/* -------------------------------------------------- */}
+//       {/* <div>
+//         <UseMemoExample a={a} b={b} />
+//         <button onClick={() => setCount(c => c + 1)}>Re-render: {count}</button>
+//       </div> */}
+
+//       {/* <ReactMemoExample /> */}
+//       {/* -------------------------------------------------- */}
+      
+//       {/* <UseCallbackExample /> */}
+//       {/* <UseReducerExample /> */}
+
+//       {/* -------------------------------------------------- */}
+      
+//       {/* <SomeProvider>
+//         <Counter />
+//         <Controls />
+//       </SomeProvider> */}
+
+//       {/* ================================================== */}
+//       {/* CUSTOM HOOKS EXAMPLES */}
+//       {/* ================================================== */}
+
+//       <div style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
+//         <h1 style={{ textAlign: "center", marginBottom: "40px" }}>Custom Hooks Examples</h1>
+
+//         <div style={{ marginBottom: "40px" }}>
+//           <UseCounterExample />
+//         </div>
+
+//         <div style={{ marginBottom: "40px" }}>
+//           <UseInputExample />
+//         </div>
+
+//         <div style={{ marginBottom: "40px" }}>
+//           <UseToggleExample />
+//         </div>
+
+//         <div style={{ marginBottom: "40px" }}>
+//           <UseFetchExample />
+//         </div>
+
+//         <div style={{ marginBottom: "40px" }}>
+//           <UseLocalStorageExample />
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default App;
