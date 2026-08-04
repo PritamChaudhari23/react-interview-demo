@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 
 const initialState = { count: 0 };
+
 function reducer(state, action) {
     switch (action.type) {
         case 'increment':
@@ -12,11 +13,9 @@ function reducer(state, action) {
     }
 }
 
-
 const UseReducerExample = () => {
-
-
     const [state, dispatch] = useReducer(reducer, initialState);
+
     return (
         <div>
             <h1>useReducer Example</h1>

@@ -1,19 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react'
+
 function UseRefExample() {
-  const [count, setCount] = useState(0);
-  const renderCount = useRef(0);
-  
-  useEffect(() => {
-    renderCount.current = renderCount.current + 1;
-  });
-  
+  const inputRef = useRef(null);
+
+  function handleFocus() {
+    inputRef.current.focus()
+  }
+
   return (
-    <div>
-      <p>Count: {count}</p>
-      <p>Renders: {renderCount.current}</p>
-      <button onClick={() => setCount(c => c + 1)}>Increment</button>
-    </div>
-  );
+    <>
+      <input ref={inutRef} type="text" placeholder="Type something here...." />
+      <button onClick={handleFocus}>FocusInput</button>
+    </>
+  )
 }
 
 // -------------------------------------------------------------------------------
@@ -23,7 +22,7 @@ const Input = React.forwardRef((props, ref) => {
 });
 
 const UseRefExample02 = () => {
- const inputRef = React.useRef(null);
+  const inputRef = React.useRef(null);
 
   const clearInput = () => {
     if (inputRef.current) {
